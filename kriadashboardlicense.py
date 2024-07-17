@@ -3,11 +3,6 @@ import requests
 import re
 import base64
 import sys
-import os
-
-# Assuming the path to xscc.awk is in the same directory as license.py
-xscc_awk_path = os.path.join(os.path.dirname(__file__), 'xscc.awk')
-
 
 def process_file_content(content):
     # Process the content using awk script
