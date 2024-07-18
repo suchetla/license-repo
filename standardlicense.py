@@ -104,7 +104,7 @@ def main(prNumber, access_token, repo_string):
         # GitHub API endpoint for retrieving files from PR_Check repository
         # pr_check_base_url = "https://gitenterprise.xilinx.com/api/v3/repos/ssw-devops/PR_Check/contents/LICENSES/LICENSE-PR-CHECKS/"
         # pr_check_base_url = "https://api.github.com/repos/suchetla/PR_Check/contents/LICENSES/kria-dashboard/"
-        pr_check_base_url = "https://api.github.com/repos/suchetla/PR_Check/contents/LICENSES/{repo_name}/"
+        pr_check_base_url = f"https://api.github.com/repos/suchetla/PR_Check/contents/LICENSES/{repo_name}/"
         pr_check_response = requests.get(pr_check_base_url, headers=headers)
 
         if pr_check_response.status_code == 200:
