@@ -135,6 +135,9 @@ func v(l,w,x){
     if(y) print;
     else{
         F="";
+        if ($0 ~ /^#!/) {
+            next;  # Skip shebang lines
+        }
         v($0);
         if(blanklines||F~/[^ ]/) print F;
     }
