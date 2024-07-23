@@ -14,8 +14,11 @@ def process_file_content(content):
     return stdout_text, stderr_text, awk_process.returncode
 
 def preprocess_content(content):
+    # Remove lines that start with # followed by special characters
+    processed_script = re.sub(r'^#\s*[^\w\s]*\n', '', content, flags=re.MULTILINE)
+
     # Remove the hash from each line
-    processed_script = re.sub(r'^#', '', content, flags=re.MULTILINE)
+    processed_script = re.sub(r'^#', '', processed_script, flags=re.MULTILINE)
     
     # Remove /* ... */ multiline comments
     processed_script = re.sub(r'/\*(.*?)\*/', lambda match: match.group(1), processed_script, flags=re.MULTILINE | re.DOTALL)
