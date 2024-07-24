@@ -132,7 +132,7 @@ func v(l,w,x){
     if(FNR==1) {
         i(language,FILENAME,extract);
     }
-    if(y) print;
+    if(y) exit; # Exit the script after printing the copyright portion
     else{
         F="";
         if ($0 ~ /^#!/) {
