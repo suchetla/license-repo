@@ -75,7 +75,7 @@ def main(prNumber, access_token, repo_string):
             added_contents = {}
 
             # Extensions to exclude from processing
-            excluded_extensions = {'.json', '.xml', '.yml', '.hcl'}
+            excluded_extensions = {'.json', '.xml', '.yml', '.yaml','.hcl'}
 
             # Retrieve and process content of modified and added files from raw_url
             for file_info in files:
